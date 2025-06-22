@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Transaction History{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Full Transaction History</h2>
+    <a href="{% url 'customer_dashboard' %}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back to Dashboard
+    </a>
+</div>
+{% include 'banking/partials/transaction_table.html' %}
+{% endblock %}

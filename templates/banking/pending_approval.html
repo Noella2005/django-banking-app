@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Account Pending{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <div class="card p-4">
+            <div class="card-body">
+                <i class="bi bi-hourglass-split" style="font-size: 4rem; color: #ffc107;"></i>
+                <h2 class="card-title mt-3">Your Account is Awaiting Approval</h2>
+                <p class="lead text-muted">
+                    Thank you for registering, {{ user.username }}! Your account is currently under review by our team.
+                </p>
+                <p>You will be able to access your dashboard and all features as soon as your account is approved. Please check back later.</p>
+                <form method="post" action="{% url 'logout' %}" class="mt-4">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Logout and Return to Homepage</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

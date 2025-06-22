@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome to RAL Bank{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold lh-1 mb-3">Secure, Simple, and Smart Banking</h1>
+            <p class="lead">
+                Welcome to RAL Bank, where your financial security is our top priority.
+                Manage your funds with cutting-edge technology and unparalleled peace of mind.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-4 me-md-2">Open an Account</a>
+                <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-lg px-4">Customer Login</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center">
+            {# A placeholder image - you can replace src with a real image URL #}
+            <img src="{% static 'images/My Bank.png' %}" class="img-fluid rounded-3 shadow-lg" alt="Secure Banking Illustration">        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5 pt-5 text-center">
+        <div class="col-lg-12">
+            <h2 class="fw-bold">Why Choose RAL Bank?</h2>
+            <p class="lead text-muted mb-5">We are committed to providing a secure and user-friendly experience.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon bg-primary bg-gradient text-white fs-2 mb-3 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 3rem; height: 3rem;">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                    <h5 class="card-title">End-to-End Encryption</h5>
+                    <p class="card-text">All your data and transactions are protected with industry-standard encryption, ensuring your privacy and security.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon bg-primary bg-gradient text-white fs-2 mb-3 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 3rem; height: 3rem;">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h5 class="card-title">Fully Responsive</h5>
+                    <p class="card-text">Access your accounts and manage your finances anytime, anywhere, on any device—desktop, tablet, or mobile.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="feature-icon bg-primary bg-gradient text-white fs-2 mb-3 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 3rem; height: 3rem;">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+                    <h5 class="card-title">Manager Oversight</h5>
+                    <p class="card-text">Every new account is personally approved by our management team, adding a layer of human verification to prevent fraud.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

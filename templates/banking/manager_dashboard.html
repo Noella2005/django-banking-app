@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Manager Dashboard{% endblock %}
+{% block content %}
+<h2 class="mb-4">Manager Dashboard</h2>
+<div class="row text-center">
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <i class="bi bi-person-check-fill card-icon text-warning"></i>
+                <h5 class="card-title mt-2">Pending Approvals</h5>
+                <p class="fs-3">{{ pending_users }}</p>
+                <a href="{% url 'pending_approvals' %}" class="btn btn-warning stretched-link">Review</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <i class="bi bi-people-fill card-icon text-success"></i>
+                <h5 class="card-title mt-2">Active Customers</h5>
+                <p class="fs-3">{{ active_customers }}</p>
+                <a href="{% url 'customer_management' %}" class="btn btn-success stretched-link">Manage</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <i class="bi bi-receipt-cutoff card-icon text-info"></i>
+                <h5 class="card-title mt-2">Total Transactions</h5>
+                <p class="fs-3">{{ total_transactions }}</p>
+                <a href="/admin/banking/transaction/" class="btn btn-info stretched-link">Audit in Admin</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3"> <!-- Adjust col size if needed -->
+        <div class="card h-100">
+            <div class="card-body">
+                <i class="bi bi-cash-coin card-icon text-primary"></i>
+                <h5 class="card-title mt-2">Loan Requests</h5>
+                <p class="fs-3">{{ pending_loans_count }}</p> {# We'll add this to the view next #}
+                <a href="{% url 'loan_requests_list' %}" class="btn btn-primary stretched-link">Process</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
